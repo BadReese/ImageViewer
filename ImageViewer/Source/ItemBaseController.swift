@@ -476,6 +476,9 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
                     }, completion: { [weak self] _ in
 
                         self?.itemView.isHidden = false
+                        if self?.itemView.image == nil {
+                            self?.itemView.image = animatedImageView.image
+                        }
                         displacedView.isHidden = false
                         animatedImageView.removeFromSuperview()
 
